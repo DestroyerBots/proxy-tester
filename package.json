@@ -1,0 +1,19 @@
+{
+  "name": "proxy-tester",
+  "version": "1.0.0",
+  "description": "Proxy tester for use with PD proxies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DestroyerBots/proxy-tester.git"
+  },
+  "author": "REAL BIG TIME LLC",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/DestroyerBots/proxy-tester/issues"
+  },
+  "homepage": "https://github.com/DestroyerBots/proxy-tester#readme"
+}
