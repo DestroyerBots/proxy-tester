@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>proxies</title>
+    <!--********************* font awesome CDN *********************-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!--********************* Bootstrap CDN *********************-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <!--********************* simplebar css CDN *********************-->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <!--********************* main page style *********************-->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div id="app">
+        <div id="dragbar"></div>
+        <div class="top">
+            <h2>DESTROYER</h2>
+            <img class="mx-3" src="assets/images/atom.svg" alt="logo">
+            <h2>PROXIES</h2>
+        </div>
+        <!--********************** start table wrapper *****************************-->
+        <div class="table-wrapper my-4">
+            <!--********************** start table container *****************************-->
+            <div class="container">
+                    <header>
+                        <div class="w-100 h-100">
+                                <form class="form-inline offset-md-2 col-10 col-md-4 h-100 w-100 d-inline-flex">
+                                    <div class="form-group mb-0 w-100 h-100">
+                                        <input id="url-bar" type="text" class="form-control-plaintext w-100 h-100 p-2" autocomplete="false"
+                                        placeholder="enter url here"
+                                        value=""
+                                        required
+                                        />
+
+                                    </div>
+                                </form>
+                                <!-- Example single danger button -->
+                                <div class="btn-group h-100 col-10 col-md-4 col-lg-3">
+                                    <button type="button" class="btn dropdown-toggle w-100"
+                                    id="dropdown-menu-btn"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    choose preset sites
+                                    </button>
+                                    <div class="dropdown-menu" id="dropdown-menu">
+                                    <a class="dropdown-item" href="#" data-site-url="https://supremenewyork.com/">Supreme</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                                <div class="right-actions">
+                                        <i class="fas fa-minus mr-3"></i>
+                                        <i class="fas fa-times"></i>
+                                </div>
+                        </div>
+                    </header>
+        <!--====================== start main table section ==================================-->
+                    <main data-simplebar data-simplebar-auto-hide="false">
+                        <table class="table table-hover m-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" id="unCheckAll">
+                                        <span>
+                                            <span></span>
+                                        </span>
+                                    </th>
+                                    <th scope="col"></th>
+                                    <th scope="col">IP</th>
+                                    <th scope="col">port</th>
+                                    <th scope="col">user</th>
+                                    <th scope="col">password</th>
+                                    <th scope="col">ping</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                    </main>
+            <!--========================== end main table section ===================================-->
+                    <footer class="row p-0 m-0">
+                        <div class="left row col-lg-6 m-0 p-0">
+                                <button type="button"
+                                class="btn rounded-0 col-sm-6"
+                                data-toggle="modal" data-target="#importProxiesModal"
+                                >
+                                <i class="fas fa-external-link-alt"></i>IMPORT PROXIES</button>
+                                <button type="button" id="exportProxies" class="btn rounded-0 text-center text-lg-left pl-1 col-sm-6"><i class="fas fa-external-link-alt"></i>EXPORT PROXIES</button>
+                        </div>
+                        <div class="right row col-lg-6 m-0 p-0">
+                                <button type="button" id="start" class="btn rounded-0 col-sm-4">
+                                    <i class="far fa-play-circle mr-2"></i>test
+                                </button>
+                                <button type="button" id="clearFailed" class="btn rounded-0 col-sm-4">
+                                    <i class="fas fa-trash-alt mr-2"></i>clear failed
+                                </button>
+                                <button type="button" id="clearAll" class="btn rounded-0 col-sm-4">
+                                    <i class="fas fa-trash-alt mr-2"></i>clear all options
+                                </button>
+                        </div>
+                    </footer>
+            </div>
+            <!--********************** start table container *****************************-->
+        </div>
+        <!--********************** end table wrapper *****************************-->
+        <!--********************** start IMPORT PROXIES model *****************************-->
+        <!-- Modal -->
+        <div class="modal fade" id="importProxiesModal" tabindex="-1" role="dialog" aria-labelledby="importProxiesModalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content text-uppercase">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="importProxiesModalTitle">
+                                <i class="fas fa-external-link-alt"></i>imPORT File
+                        </h5>
+                    </div>
+                    <div class="input-group mb-4">
+                            <div class="custom-file h-100">
+                                <input type="file" class="custom-file-input h-100" id="inputFile">
+                                <label class="custom-file-label h-100" for="inputFile" aria-describedby="inputGroupFileAddon02">Lorem-ipsum.txt</label>
+                            </div>
+                        </div>
+                    <div id="modal-body" class="modal-body pt-2">
+
+                        <form id="addProxyForm" class="form-inline w-100 h-100">
+                            <div id="inputWrapper" class="form-group mb-0 w-100 h-100">
+                                <textarea class="form-control w-100 h-100 text-uppercase" id="proxiesBox"
+                                placeholder="proxy : port : user : password"
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center pb-0">
+                        <button id="submitProxies" type="button" class="btn text-uppercase">submit proxies</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--********************** end IMPORT PROXIES model *****************************-->
+        <div class="bottom">
+            <p>Don’t have proxies?</p>
+            <a href="https://shop.destroyerbots.com/collections/destroyer-proxies" class="btn btn-light mx-5">
+                <span class="rounded-circle">
+                    <img class="rounded-circle" src="assets/images/shopping-cart.svg" alt="custom Cart"/>
+                </span>
+                Buy here
+            </a>
+        </div>
+
+    </div>
+
+    <!-- START NODE MODULES SCRIPTS -->
+
+    <script src="assets/js/ipcFunctions.js"></script>
+
+    <!-- END NODE MODULES SCRIPTS -->
+
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <!-- START REGULAR SCRIPTS -->
+
+    <!--********************* jQuery *********************-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!--********************* popper *********************-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!--********************* bootstrap js min *********************-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--********************* simplebar js CDN *********************-->
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
+
+    <!--********************* main page js *********************-->
+    <script src="assets/js/main.js"></script>
+
+    <!-- END REGULAR SCRIPTS -->
+
+    <script>if (window.module) module = window.module;</script>
+</body>
+</html>

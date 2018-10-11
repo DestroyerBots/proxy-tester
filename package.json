@@ -2,7 +2,7 @@
   "name": "proxy-tester",
   "version": "1.0.0",
   "description": "Proxy tester for use with PD proxies.",
-  "main": "index.js",
+  "main": "src/main/index.js",
   "scripts": {
     "test": "mocha"
   },
@@ -15,5 +15,19 @@
   "bugs": {
     "url": "https://github.com/DestroyerBots/proxy-tester/issues"
   },
-  "homepage": "https://github.com/DestroyerBots/proxy-tester#readme"
+  "homepage": "https://github.com/DestroyerBots/proxy-tester#readme",
+  "dependencies": {
+    "ajv": "^6.5.4",
+    "electron": "^3.0.0",
+    "har-schema": "^2.0.0",
+    "har-validator": "^5.1.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "isdev": "^1.0.1",
+    "mocha": "^5.2.0"
+  }
 }

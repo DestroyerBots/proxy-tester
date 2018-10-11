@@ -1,0 +1,381 @@
+@font-face {
+  font-family: 'Rubik-Medium';
+  src: url("../fonts/Rubik-Medium.ttf"); }
+
+@font-face {
+  font-family: 'Rubik-Regular';
+  src: url("../fonts/Rubik-Regular.ttf"); }
+
+body {
+  padding: 0;
+  background-image: url("../images/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #191927;
+  position: relative;
+  overflow-x: hidden; }
+
+@keyframes atom {
+  form {
+    /*transform: rotate(0deg);*/
+    box-shadow: none; }
+  to {
+    /*transform: rotate(360deg);*/
+    box-shadow: 0 0 5px #353568,
+ 0 0 10px #272759,
+ 0 0 15px #2f2f7a,
+ 0 0 20px #20206e,
+ 0 0 30px #222287,
+ 0 0 40px #7272ca; } }
+
+@keyframes shadow {
+  from {
+    box-shadow: 0px 0px 0px 0px #7e295a; }
+  to {
+    box-shadow: 0px 0px 20px 0px #7e295a; } }
+
+#app {
+  height: 100vh;
+  /*********** top header & logo *************/
+  /*************** table content *************/
+  /*************** import proxies model *************/
+  /*************** bottom buy here *************/ }
+  #dragbar {
+    width: 100%;
+    height: 40px;
+    -webkit-app-region: drag;
+  }
+  #app .top {
+    -webkit-user-select: none;
+    -webkit-app-region: no-drag;
+    width: 100%;
+    padding-right: 40px;
+    text-align: center; }
+    #app .top h2 {
+      display: inline-block; }
+      #app .top h2:first-child {
+        color: #5C54DB; }
+      #app .top h2:last-child {
+        color: var(--white);
+        font-family: 'Rubik-Medium'; }
+    #app .top img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      animation: atom infinite 3s linear; }
+  #app .table-wrapper {
+      /*************** header *************/
+    /*************** main *************/
+    /*************** footer *************/ }
+  #app .table-wrapper .container {
+    height: 70vh;
+  }
+    #app .table-wrapper header {
+      width: 100%;
+      height: 50px;
+      color: #fff;
+      position: relative;
+      background-color: #191927; }
+      @media (max-width: 767.8px) {
+        #app .table-wrapper header {
+          height: auto; } }
+      #app .table-wrapper header > div {
+        background-color: rgba(131, 122, 223, 0.09); }
+        #app .table-wrapper header > div div.btn-group {
+          margin-top: -8px; }
+          @media (max-width: 767.8px) {
+            #app .table-wrapper header > div div.btn-group {
+              width: 100%;
+              margin-top: 5px; } }
+          #app .table-wrapper header > div div.btn-group .btn {
+            outline: none;
+            box-shadow: none;
+            border: none;
+            background-color: #353255;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: uppercase; }
+            @media (max-width: 767.8px) {
+              #app .table-wrapper header > div div.btn-group .btn {
+                width: 100%; } }
+          #app .table-wrapper header > div div.btn-group .dropdown-menu {
+            background-color: #232237;
+            width: 90%; }
+            @media (max-width: 767.8px) {
+              #app .table-wrapper header > div div.btn-group .dropdown-menu {
+                text-align: center; } }
+            #app .table-wrapper header > div div.btn-group .dropdown-menu a {
+              color: #fff; }
+              #app .table-wrapper header > div div.btn-group .dropdown-menu a:hover {
+                color: #000; }
+              #app .table-wrapper header > div div.btn-group .dropdown-menu a:active {
+                background-color: #232237; }
+      #app .table-wrapper header form input {
+        background-color: #837adf2e;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        text-transform: uppercase; }
+        #app .table-wrapper header form input::placeholder {
+          color: #fff; }
+      #app .table-wrapper header .right-actions {
+        position: absolute;
+        right: 15px;
+        top: 11px;
+        color: #837ADF; }
+        #app .table-wrapper header .right-actions i {
+          cursor: pointer; }
+    #app .table-wrapper main {
+      background-color: #222230;
+      overflow-y: scroll;
+      max-height: 480px;
+      height:100%;
+    }
+      @media (max-width: 767.9px) {
+        #app .table-wrapper main {
+          overflow: scroll; } }
+      #app .table-wrapper main .simplebar-track {
+        background-color: #191927;
+        border-radius: 7px; }
+        #app .table-wrapper main .simplebar-track.vertical {
+          right: 10px;
+          top: 40px;
+          height: 85%;
+          width: 13px; }
+      #app .table-wrapper main .simplebar-scrollbar {
+        margin-left: 5px;
+        width: 10px; }
+        #app .table-wrapper main .simplebar-scrollbar:before {
+          background-color: #2E2E3D; }
+      #app .table-wrapper main .simplebar-content {
+        margin-right: 20px !important; }
+      #app .table-wrapper main .table {
+        color: #576574;
+        font-weight: 500;
+      }
+        #app .table-wrapper main .table thead tr th {
+          -webkit-user-select: none;
+          border-top: none;
+          border-color: #576574;
+          font-weight: 400;
+          color: #A0A1A8;
+          font-size: 18px;
+          text-transform: uppercase;
+          border: none; }
+          #app .table-wrapper main .table thead tr th:first-child {
+            width: 65px; }
+            #app .table-wrapper main .table thead tr th:first-child > span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 24px;
+              height: 24px;
+              border: 1.5px solid #837ADF;
+              border-radius: 50%;
+              cursor: pointer;
+              transform: translateX(5px); }
+              #app .table-wrapper main .table thead tr th:first-child > span > span {
+                width: 13px;
+                height: 4px;
+                background-color: #837ADF;
+                display: inline-block; }
+        #app .table-wrapper main .table tbody tr th {
+          border: none;
+          color: #837ADF;
+          position: relative; }
+          #app .table-wrapper main .table tbody tr th input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 23px;
+            width: 23px; }
+            #app .table-wrapper main .table tbody tr th input:checked ~ .checkmark {
+              background-color: #837ADF; }
+              #app .table-wrapper main .table tbody tr th input:checked ~ .checkmark:after {
+                visibility: visible;
+                border-color: #222230; }
+          #app .table-wrapper main .table tbody tr th .checkmark {
+            position: absolute;
+            top: 25%;
+            left: 28%;
+            height: 23px;
+            width: 23px;
+            background-color: transparent;
+            border: 2px solid #837ADF;
+            pointer-events: none;
+            border-radius: 50%;
+            transition: .5s all ease-in; }
+            #app .table-wrapper main .table tbody tr th .checkmark:after {
+              content: "";
+              position: absolute;
+              visibility: hidden;
+              left: 6px;
+              top: 1px;
+              width: 8px;
+              height: 15px;
+              border: solid #837ADF;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+        #app .table-wrapper main .table tbody tr td {
+          border-top: none;
+          border-bottom: 1px solid #576574; }
+          #app .table-wrapper main .table tbody tr td:nth-child(2), #app .table-wrapper main .table tbody tr td:nth-child(3) {
+            color: #837ADF; }
+          #app .table-wrapper main .table tbody tr td:last-child.good {
+            color: #AAED83; }
+          #app .table-wrapper main .table tbody tr td:last-child.ok {
+            color: #fad859; }
+          #app .table-wrapper main .table tbody tr td:last-child.bad {
+            color: #F26868; }
+    #app .table-wrapper footer {
+      background-color: #191927;
+      margin-top: 20px;
+      height: 50px; }
+      @media (max-width: 991.98px) {
+        #app .table-wrapper footer {
+          height: auto; } }
+      #app .table-wrapper footer .left {
+        background-color: #5765745e; }
+        #app .table-wrapper footer .left .btn {
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+          color: #767f86;
+          padding: 10px 0; }
+          #app .table-wrapper footer .left .btn:hover {
+            background-color: #837ADF;
+            transition: .5s;
+            color: #EEE; }
+          #app .table-wrapper footer .left .btn i {
+            font-size: 18px;
+            margin-right: 10px; }
+          #app .table-wrapper footer .left .btn:first-child i {
+            color: #837ADF; }
+          #app .table-wrapper footer .left .btn:first-child:hover i {
+            color: #fff; }
+          #app .table-wrapper footer .left .btn:last-child i {
+            transform: rotate(90deg);
+            color: #01D2D3; }
+      #app .table-wrapper footer .right {
+        background-color: #57657496; }
+        #app .table-wrapper footer .right .btn {
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+          color: #767f86; }
+          #app .table-wrapper footer .right .btn:hover {
+            background-color: #837ADF;
+            transition: .5s;
+            color: #EEE; }
+          #app .table-wrapper footer .right .btn i {
+            font-size: 18px; }
+          #app .table-wrapper footer .right .btn:first-child i {
+            color: #CCF79F; }
+          #app .table-wrapper footer .right .btn:nth-child(2) i {
+            color: #FF9F44; }
+          #app .table-wrapper footer .right .btn:nth-child(3) i,
+          #app .table-wrapper footer .right .btn:last-child i {
+            color: #7F49E8; }
+  #app .modal .modal-content {
+    color: #fff;
+    background-color: #2E2E3D;
+    padding: 20px 25px;
+    border-radius: 20px;
+    /**
+        * modal header
+        */
+    /**
+        * modal file input
+        */
+    /**
+        * modal body
+        */
+    /**
+        * modal footer
+        */ }
+    #app .modal .modal-content .modal-header {
+      padding: 0;
+      margin-bottom: 10px;
+      border: none; }
+      #app .modal .modal-content .modal-header h5 {
+        font-weight: 400;
+        font-size: 23px;
+        color: #b6b3b3; }
+        #app .modal .modal-content .modal-header h5 i {
+          margin-right: 10px;
+          color: #7F49E8;
+          font-size: 25px; }
+    #app .modal .modal-content .input-group {
+      height: 42px; }
+      #app .modal .modal-content .input-group input {
+        cursor: pointer; }
+      #app .modal .modal-content .input-group label {
+        background-color: rgba(131, 122, 223, 0.08);
+        border: none;
+        color: #b6b3b3;
+        line-height: 2; }
+        #app .modal .modal-content .input-group label::after {
+          top: 0px;
+          height: 100%;
+          line-height: 2;
+          background-color: rgba(131, 122, 223, 0.2);
+          border: none;
+          color: #b6b3b3;
+          padding: .375rem 2rem; }
+    #app .modal .modal-content .modal-body {
+      color: #b6b3b3;
+      background-color: rgba(131, 122, 223, 0.08);
+      height: 300px;
+      position: relative; }
+      #app .modal .modal-content .modal-body form textarea {
+        border: none;
+        color: #b6b3b3;
+        background-color: transparent; }
+        #app .modal .modal-content .modal-body form textarea::placeholder {
+          color: #b6b3b3; }
+        #app .modal .modal-content .modal-body form textarea:focus {
+          outline: none;
+          box-shadow: none; }
+    #app .modal .modal-content .modal-footer {
+      border: none; }
+      #app .modal .modal-content .modal-footer button {
+        background-color: #837ADF;
+        color: #ffd3d3; }
+  #app .bottom {
+    position: absolute;
+    bottom: 0;
+    -webkit-user-select: none;
+    text-align: center;
+    width: 100%; }
+    #app .bottom a {
+      position: relative;
+      background-color: rgba(87, 101, 116, 0.418);
+      border: none;
+      border-top-right-radius: 0.8rem !important;
+      border-bottom-right-radius: 0.8rem !important;
+      color: #EF3DA4;
+      box-shadow: none;
+      font-size: 23px;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 0 20px;
+      text-decoration: none; }
+      #app .bottom a span {
+        display: inline-block;
+        padding: 5px;
+        background-color: #EF3DA4;
+        position: absolute;
+        left: -30px;
+        top: -8px; }
+        #app .bottom a span img {
+          width: 35px;
+          height: 31px; }
+      #app .bottom a:hover {
+        animation: shadow infinite 1s linear; }
+    #app .bottom p {
+      font-size: 18px;
+      color: #fff;
+      display: inline-block; }
