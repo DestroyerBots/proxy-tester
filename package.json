@@ -4,6 +4,7 @@
   "description": "Proxy tester for use with PD proxies.",
   "main": "src/main/index.js",
   "scripts": {
+    "dev": "electron .",
     "test": "mocha"
   },
   "repository": {
