@@ -1,21 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const path = require('path');
-const isDev = require('isdev');
 
-let WINDOW_MAIN_PATH;
-let WINDOW_WORKER_PATH;
+const WINDOW_MAIN_PATH = path.join(__dirname, '..', 'static', 'index.html');
+const WINDOW_WORKER_PATH = path.join(__dirname, '..', 'static', 'worker.html');
 /**
  * We want to establish the file paths. These paths will
  * change based on if app is in production or development
  */
-if (isDev) {
-  WINDOW_MAIN_PATH = path.join(__dirname, '..', 'static', 'index.html');
-  WINDOW_WORKER_PATH = path.join(__dirname, '..', 'static', 'worker.html');
-} else {
-  WINDOW_MAIN_PATH = path.join(__dirname, '..', '..', 'static', 'index.html');
-  WINDOW_WORKER_PATH = path.join(__dirname, '..', '..', 'static', 'worker.html');
-}
 
 module.exports = {
   // APP_ICON: APP_ICON,
