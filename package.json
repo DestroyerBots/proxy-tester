@@ -5,6 +5,10 @@
   "main": "src/main/index.js",
   "scripts": {
     "dev": "electron .",
+    "build": "electron-builder -mwl",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win --x64",
+    "build:linux": "electron-builder --linux",
     "test": "mocha"
   },
   "repository": {
@@ -19,16 +23,34 @@
   "homepage": "https://github.com/DestroyerBots/proxy-tester#readme",
   "dependencies": {
     "ajv": "^6.5.4",
-    "electron": "^3.0.0",
     "har-schema": "^2.0.0",
     "har-validator": "^5.1.0",
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "electron": "^3.0.0",
+    "electron-builder": "^20.28.4",
+    "electron-builder-squirrel-windows": "^20.28.3",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "isdev": "^1.0.1",
     "mocha": "^5.2.0"
+  },
+  "build": {
+    "asar": true,
+    "productName": "DestroyerBotsProxyTester",
+    "appId": "com.projectdestroyer.proxytester",
+    "mac": {
+      "target": "default"
+    },
+    "win": {
+      "publisherName": "ProjectDestroyer",
+      "target": "squirrel"
+    },
+    "files": [
+      "src/**",
+      "static/**"
+    ]
   }
 }
