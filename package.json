@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/DestroyerBots/proxy-tester#readme",
   "dependencies": {
-    "ajv": "^6.5.4",
+    "ajv": "^6.12.3",
     "har-schema": "^2.0.0",
     "har-validator": "^5.1.0",
     "request": "^2.88.0"
