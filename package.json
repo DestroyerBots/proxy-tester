@@ -28,7 +28,7 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "electron": "^3.0.0",
+    "electron": "^15.5.5",
     "electron-builder": "^20.28.4",
     "electron-builder-squirrel-windows": "^20.28.3",
     "eslint": "^5.6.0",
